@@ -1,0 +1,13 @@
+
+docker exec -it spark-master-2 spark-submit \
+  --master spark://spark-master-2:7077 \
+  --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0 \
+  jobs/streaming-socket.py
+  
+docker exec -it spark-master-2 spark-submit \
+  --master spark://spark-master-2:7077 \
+  --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0 \
+  jobs/spark-streaming.py
+
+
+docker compose up -d --build
